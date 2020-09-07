@@ -33,14 +33,14 @@ class SCP_SCJAFlatBar: UIView {
         numberOfPage = page
         currentOfPage = current
         
-        let f_all_width: CGFloat = CGFloat(numberOfPage*20)
+        let f_all_width: CGFloat = CGFloat(numberOfPage*55)
         
         guard f_all_width < self.frame.size.width else {
             print("frame.Width over Number Of Page")
             return
         }
         
-        let f_width: CGFloat = 15.0, f_height: CGFloat = 3.0
+        let f_width: CGFloat = 50.0, f_height: CGFloat = 9.0
         var f_x: CGFloat = ((self.frame.size.width-f_all_width)/2.0) - (f_width/2.0)
         var f_y: CGFloat = (self.frame.size.height-f_height)/2.0, f_move_x: CGFloat = 0.0
         
@@ -72,7 +72,7 @@ class SCP_SCJAFlatBar: UIView {
     
     // ## Call the move page in scrollView ##
     func scroll_did(_ scrollView: UIScrollView) {
-        let f_move_x: CGFloat = (20*(scrollView.contentOffset.x/scrollView.frame.size.width))
+        let f_move_x: CGFloat = (55*(scrollView.contentOffset.x/scrollView.frame.size.width))
         img_move.frame.origin.x = f_start_point + f_move_x
         f_last_x = img_move.frame.origin.x
     }
@@ -81,7 +81,7 @@ class SCP_SCJAFlatBar: UIView {
     func set_rotateDevice(_ frame: CGRect) {
         self.frame = frame
         
-        let f_width: CGFloat = CGFloat(numberOfPage*20) - 7.5
+        let f_width: CGFloat = CGFloat(numberOfPage*55) - 7.5
         var f_x: CGFloat = (self.frame.size.width-f_width)/2.0
         
         f_start_point = f_x
